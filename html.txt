@@ -1,0 +1,130 @@
+<html>
+
+<head>
+
+  <title>Countries of the world</title>
+  <link href="style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+  <header>
+    <center>
+      <h1><marquee>💝Welcome to countries of the world. You must know more about all the countries.💝</marquee></h1>
+    </center>
+  </header>
+ <div class="navbar"> 
+ <a class="active" href="index.html">Home</a>
+   <a href="China.html">China</a>
+   <a href="india.html">India</a>
+   <a href="USA .html">United States</a>
+   <a href="Indonesia.html">Indonesia</a>
+   <a href="Pakistan.html">Pakistan</a>
+   <a href="Nigeria.html">Nigeria</a>
+   <a href="Bangladesh.html">Bangladesh</a>
+   <a href="brazil.html">Brazil</a>
+   <a href="from.html">Sign Up</a>
+ </div>
+  <br>
+  <center>
+  <img class="myslides" src="brazil-wallpaper.jpg">
+  <img class="myslides" src="beijing.jpg">
+  <img class="myslides" src="licensed-india.jpg">
+  <img class="myslides" src="licensed-United States.jpg">
+  <img class="myslides" src="licensed-Indonesia.jpg">
+  <img class="myslides" src="licensed-Nigeria.jpg">
+  <img class="myslides" src="licensed-Bangladesh.jpg">
+  <img class="myslides" src="licensed-Pakistan.jpg">
+  </center>
+  <script>
+  var myIndex = 0;
+  carousel();
+  function carousel() {
+  var i;
+  var x = document.getElementsByClassName("myslides");
+  for (i = 0; i < x.length; i++) {
+  x[i].style.display = "none";
+  }
+  myIndex++;
+  if (myIndex > x.length) {
+  myIndex = 1;
+  }
+  x[myIndex - 1].style.display = "block";
+  setTimeout(carousel, 1000);
+  }
+  </script>
+  
+  <div class="cover">
+    <div class="ptext">
+  “We are already one. But we imagine we are not. And what we have to recover is our original unity. What we have to be is what we are.”
+    </div>
+  </div>
+
+  <h3 class="header">China</h3>
+  <img src="china.jpg">
+  <p class="world">
+  1.China is officially known as the People's Republic of China.<br>
+  2.Mandarin is not the only language in China.<br>
+  3.You will never eat the same food twice in China.<br>
+  </p><hr>
+  <h3 class="header">India</h3>
+  <img src="indian.png">
+  <p class="world">
+  1.India is the second largest English-speaking country in the worid.<br>
+  2.India was the first country to mine diamonds.<br>
+  3.In fact, India has the most diverse culture with many religions, foods, languages, traditions, music styles, arts, and trends. The country was ruled by the French, Portuguese, British, and Dutch, which makes it a wonderful destination for history fans.
+  </p><hr>
+  <h3 class="header">United States</h3>
+  <img src="us.png">
+  <p class="world">
+  1.The world's 4th Longest River System is in the USA. ...<br>
+  2.The USA ranks number 1 for hosting International students. ...<br>
+  3.The United States is enormous. ...<br>
+  </p><hr>
+  <h3 class="header">Indonesia</h3>
+  <img src="Indonesia.png">
+  <p class="world">
+  1. It is the largest archipelago in the world. ...<br>
+  2.It is home to a huge dragons (okay, they are technically lizards) ...<br>
+  3.Indonesia has the third highest number of volcanoes in the world.<br>
+  </p><hr>
+  <h3 class="header">Pakistan</h3>
+  <img src="Pakistan.png">
+  <p class="world">
+  1.First Muslim Female Prime Minister.<br>
+  2.National Sport is Field Hockey.<br>
+  3.World's Largest Deep Sea Port.<br>
+  </p><hr>
+  <h3 class="header">Nigeria</h3>
+  <img src="Nigeria.png">
+  <p class="world">
+  1.It’s Africa’s most populous country<br>
+  2.Nigeria is one of the largest film producers in the world<br>
+  3.There’s a town known as ‘the twins capital of the world’<br>
+  </p><hr>
+  <h3 class="header">Brazil</h3>
+  <img src="Brazil.png">
+  <p class="world">
+  1.	Brazil is the world’s fifth-largest country and has the sixth most people living there of any country in the world. Over 211 million people live in Brazil.<br>
+  2.	Brazil has 4 time zones. The reason Brazil has 4 time zones is because it is so big there is a big difference in when the sun sets across the country. <br>
+  3.	The Capital City is Brasilia. Lots of people think Rio de Janeiro is the Capital but it’s actually Brasilia. Other big cities include Sao Paulo, Salvador and Fortaleza. <br>
+  </p><hr>
+  <h3 class="header">Bangladesh</h3>
+  <img src="Bangladesh.png">
+  <p class="world">
+  1. Bangladesh is home to the third longest beach in the world. The Cox Bazar Beach is one of the most popular tourist destinations in the country, and it’s the third longest beach in the world.<br>
+  2. The majority of the population are farmers. It is estimated that somewhat 70% of the population are farmers. Many households rely on agriculture and it’s the largest employment sector in Bangladesh.<br>
+  3. Bangladesh has six fully distinct seasons, and it’s sometimes called “the playground of seasons”.  Those six seasons are the Summer, the Monsoon, the Autumn, the Late Autumn, the Winter and the Spring. Every season comes with different crops, fruits, lifestyle, and festivals.  In fact, Bangladeshi people celebrate every season with a different festival.<br>
+  </p><hr><br>
+  <center>
+    <audio controls autoplay>
+      <source src="welcome-home-113819.mp3" type="audio/mp3">
+    Your browser does not support the audio element.
+    </audio>
+  </center>
+  <br><br><br>
+<div class="footer">
+  <p>Copy Right &copy; reserved by Lisa Hannah Thumu </p>
+</div>
+  </body>
+
+  </html>
