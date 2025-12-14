@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>唐老师，生日快乐！</title>
+    <style>
+        /* Simple, stable styles for 100% functionality */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'PingFang SC', 'Microsoft YaHei', sans-serif;
+        }
+
+        /* Button screen: Only a button (first load) */
+        #btn-screen {
+            width: 100%;
+            height: 100vh;
+            background: linear-gradient(135deg, #F8C82E 0%, #F687B3 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* Big, easy-to-click button */
+        #show-greetings {
+            padding: 25px 70px;
+            font-size: 28px;
+            background: white;
+            border: none;
+            border-radius: 60px;
+            color: #E67E22;
+            cursor: pointer;
+        }
+
+        /* Greetings screen: Hidden initially, shows instantly on click */
+        #greetings-screen {
+            width: 100%;
+            min-height: 100vh;
+            background: #FFF9EA;
+            padding: 30px 20px;
+            box-sizing: border-box;
+            display: none;
+        }
+
+        /* Header: Warm and festive for Teacher Tang */
+        .header {
+            text-align: center;
+            margin-bottom: 50px;
+            padding-top: 20px;
+        }
+
+        .header h1 {
+            color: #F687B3;
+            font-size: 36px;
+            margin-bottom: 15px;
+        }
+
+        .header p {
+            color: #5D4037;
+            font-size: 18px;
+            opacity: 0.9;
+        }
+
+        /* Wish cards: Clean display for class messages */
+        .wish-card {
+            max-width: 650px;
+            margin: 0 auto 25px;
+            background: white;
+            padding: 22px;
+            border-radius: 16px;
+            border-left: 5px solid #F8C82E;
+            box-shadow: 0 3px 10px rgba(230, 126, 34, 0.05);
+        }
+
+        .student-name {
+            font-weight: bold;
+            color: #E67E22;
+            font-size: 20px;
+            margin-bottom: 12px;
+        }
+
+        .student-wish {
+            color: #5D4037;
+            font-size: 17px;
+            line-height: 1.8;
+        }
+
+        /* Highlight class-wide wishes */
+        .class-wish {
+            border-left-color: #F687B3;
+        }
+
+        .class-wish .student-name {
+            color: #F687B3;
+        }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            margin-top: 60px;
+            color: #5D4037;
+            font-size: 16px;
+            opacity: 0.8;
+            padding-bottom: 30px;
+        }
+
+        /* Hide audio element */
+        audio {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 1. Button Screen (Only shows first) -->
+    <div id="btn-screen">
+        <button id="show-greetings">打开查看祝福</button>
+    </div>
+
+    <!-- 2. Group-Sung "Happy Birthday" Song (Perfect for celebration) -->
+    <audio id="birthday-music" loop preload="auto">
+        <source src="https://music.163.com/song/media/outer/url?id=1294182404.mp3" type="audio/mpeg">
+    </audio>
+
+    <!-- 3. Greetings Screen (YOUR CLASS'S REAL MESSAGES FOR TEACHER TANG) -->
+    <div id="greetings-screen">
+        <div class="header">
+            <h1>亲爱的唐老师，生日快乐！💖</h1>
+            <p>感谢您成为我们初中生涯的第一位老师，引领我们成长！</p>
+        </div>
+
+        <!-- Student Wishes (From Your Class Document) -->
+        <div class="wish-card">
+            <div class="student-name">陈涛丹</div>
+            <div class="student-wish">
+                您让我们看到了学业的美好，更点燃了我们对未来的希望。祝您日后工作顺利，桃李满天下！
+            </div>
+        </div>
+
+        <div class="wish-card">
+            <div class="student-name">李人下</div>
+            <div class="student-wish">
+                唐老师生日快乐！您成为我们初中的第一位老师，带领同学们探索知识的道理，同时让我们的成绩更上一层楼。祝您事业顺利，事事如意！
+            </div>
+        </div>
+
+        <div class="wish-card">
+            <div class="student-name">初2024.9班全体同学</div>
+            <div class="student-wish">
+                感谢您的鼓励与批评，祝您生日快乐！
+            </div>
+        </div>
+
+        <div class="wish-card class-wish">
+            <div class="student-name">2023级班 杨张梅天</div>
+            <div class="student-wish">
+                祝唐老师生日快乐！甘当人梯，泽被四方，桃李满天下！
+            </div>
+        </div>
+
+        <div class="wish-card">
+            <div class="student-name">2003班 唐如</div>
+            <div class="student-wish">
+                祝唐老师生日快乐！您的恩情难以报答，愿您每天开心，身体健康！
+            </div>
+        </div>
+
+        <div class="wish-card">
+            <div class="student-name">2003班 张睿</div>
+            <div class="student-wish">
+                祝唐老师生日快乐！去年9月有幸遇见您，感谢您的体谅与包容，让我们重拾希望！愿您桃李满天下，每天开心！
+            </div>
+        </div>
+
+        <div class="wish-card">
+            <div class="student-name">初2024级课代表</div>
+            <div class="student-wish">
+                我的成长与您密不可分！祝唐老师桃李满天下，每天开心！
+            </div>
+        </div>
+
+        <div class="wish-card">
+            <div class="student-name">2029班 黄泽楼</div>
+            <div class="student-wish">
+                桃红柳绿满花天，愿您一切安好，万事顺遂！您教书育人，如春雨润万物，感谢您的付出！祝您生日快乐，家庭和睦，身体健康！
+            </div>
+        </div>
+
+        <div class="wish-card">
+            <div class="student-name">52341 坊俊称</div>
+            <div class="student-wish">
+                祝唐老师生日快乐！工作顺利，身体健康，家庭和睦，桃李满天下！
+            </div>
+        </div>
+
+        <div class="wish-card">
+            <div class="student-name">2023级9班 好</div>
+            <div class="student-wish">
+                亲爱的唐老师：祝您生日快乐，工作顺利，蒸蒸日上，身体健康！
+            </div>
+        </div>
+
+        <div class="wish-card">
+            <div class="student-name">9班 赵梓鸭</div>
+            <div class="student-wish">
+                祝唐老师生日快乐！愿您每天开心，万事顺遂！
+            </div>
+        </div>
+
+        <div class="wish-card">
+            <div class="student-name">学习委员：罗手锋</div>
+            <div class="student-wish">
+                祝唐老师生日快乐！事业有成，身体健康！感谢您对我们的悉心教导，我们会牢记您的教诲，努力学习。祝您天天开心，工作顺利，桃李满天下！
+            </div>
+        </div>
+
+        <div class="wish-card">
+            <div class="student-name">赵棒</div>
+            <div class="student-wish">
+                祝唐老师生日快乐！年年开心，万事如意！祝您工作顺利，桃李满天下！
+            </div>
+        </div>
+
+        <div class="wish-card">
+            <div class="student-name">（匿名同学）</div>
+            <div class="student-wish">
+                祝唐老师生日快乐！感谢您对我们的包容与指导，祝您天天开心，身体健康，事业有成，万事顺遂！
+            </div>
+        </div>
+
+        <div class="wish-card class-wish">
+            <div class="student-name">全班同学</div>
+            <div class="student-wish">
+                感谢您这一年的辛勤付出！祝您生日快乐，未来的日子里，工作顺利，身体健康，桃李满天下！愿我们共同度过的初二时光，成为彼此珍贵的回忆！
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+            <p>来自：您的全体学生 | 2025年</p>
+        </div>
+    </div>
+
+    <!-- 100% Reliable JavaScript (Greetings + Music Sync) -->
+    <script>
+        // Get all elements
+        const btnScreen = document.getElementById('btn-screen');
+        const greetingsScreen = document.getElementById('greetings-screen');
+        const showBtn = document.getElementById('show-greetings');
+        const birthdayMusic = document.getElementById('birthday-music');
+
+        // Button click: Greetings + Music at the same time
+        showBtn.onclick = function() {
+            // Step 1: Show greetings INSTANTLY (priority)
+            btnScreen.style.display = 'none';
+            greetingsScreen.style.display = 'block';
+
+            // Step 2: Play group-sung birthday song (same time)
+            try {
+                birthdayMusic.play();
+            } catch (error) {
+                // Music issue won't affect greetings (they're already showing)
+                alert('请允许音频播放，一起为唐老师唱生日歌吧～');
+                birthdayMusic.play();
+            }
+        };
+    </script>
+</body>
+</html>
