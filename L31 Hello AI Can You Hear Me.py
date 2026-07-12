@@ -1,0 +1,90 @@
+import sys
+import time
+import numpy as np
+import matplotlib.pyplot as plt
+import wave
+import speech_recognition as sr
+from pydub import AudioSegment
+import os
+from speech_recognition import AudioData
+from google.colab import files
+
+def transcribe_audio_from_file(filename="audio.wav", output_filename="transcription.txt"):
+    """Transcribes an audio file and saves the transcription to a text file."""
+    r = sr.Recognizer()
+    with sr.AudioFile(filename) as source:
+        audio = r.record(source)  # read the entire audio file
+
+    try:
+        text = r.recognize_google(audio)
+    except sr.UnknownValueError:
+        text = "Could not understand audio"
+    except sr.RequestError as e:
+        text = f"API Error occurred; {e}"
+
+    print()
+    with open(output_filename, "w") as f:
+        f.write(text)
+    print(f"Saved to {output_filename}")
+
+def show_waveform_from_file(filename="audio.wav"):
+    """Displays the waveform of an audio file."""
+    try:
+        with wave.open(filename, 'rb') as wf:
+            frames = wf.readframes(wf.getnframes)
+            samples = np.frombuffer(frames)
+            rate = wf.getframerate()
+            time_axis = np.linspace(0, len(samples) / rate, num=len(samples))
+
+            plt.figure(figsize=(10, 4))
+            plt.plot(time_axis, samples)
+            plt.title("Audio Waveform")
+            plt.xlabel("Time (s)")
+            plt.ylabel("Amplitude")
+            plt.tight_layout()
+            plt.show()
+
+    except Exception as e:
+        print(f"Error showing waveform: {e}")
+
+
+def convert_mp3_to_wav(mp3_filename):
+    """Converts an MP3 file to a WAV file."""
+    wav_filename = os.path.splitext(mp3_filename)[0] + ".wav"
+
+    try:
+        audio = AudioSegment.from_mp3(mp3_filename)
+        audio.export(wav_filename, format="wav")
+        print(f"Converted {mp3_filename} to {wav_filename}")
+        return wav_filename
+    except Exception as e:
+        print(f"Error converting {mp3_filename} to WAV: {e}")
+        return None
+
+def main():
+    print("Please upload an audio file (e.g., .wav or .mp3)")
+    uploaded = files.upload()
+
+    if uploaded:
+        for filename in uploaded.keys():
+            print(f'User uploaded file "{filename}"')
+
+            if filename.lower().endswith('.mp3'):
+                wav_filename = convert_mp3_to_wav(filename)
+
+                if wav_filename:
+                    transcribe_audio_from_file(wav_filename)
+                    show_waveform_from_file(wav_filename)
+
+            elif filename.lower().endswith('.wav'):
+                transcribe_audio_from_file(filename)
+                show_waveform_from_file(filename)
+
+            else:
+                print(f"Unsupported file format: {filename}. Please upload a .wav or .mp3 file.")
+
+    else:
+        print("No file uploaded.")
+
+if __name__ == "__main__":
+    main()
