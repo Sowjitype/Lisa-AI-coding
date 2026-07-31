@@ -93,7 +93,7 @@ def display_stats(stats, text, label):
     print(f"🔊 Max Volume: {stats['max_volume']:.0f}")
     print(f"📝 Text: {text}")
 
-def compare(s1, s2):
+def compare(s1, s2, s3):
     print("\n" + "=" * 40)
     print("🔬 COMPARISON RESULTS")
     print("=" * 40)
@@ -103,6 +103,10 @@ def compare(s1, s2):
 
     louder = "1" if s1['avg_volume'] > s2['avg_volume'] else "2"
     print(f"🔊 Recording {louder} is louder ({s1['avg_volume']:.0f} vs {s2['avg_volume']:.0f})")
+
+    louder = "1" if s3['avg_volume'] > s2['avg_volume'] else "2"
+    print(f"🔊 Recording {louder} is louder ({s3['avg_volume']:.0f} vs {s2['avg_volume']:.0f})")
+    
 
     print("\n💡 In L3, you'll CONTROL rate & volume when AI speaks!")
 
